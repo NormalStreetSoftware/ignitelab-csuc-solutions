@@ -1,7 +1,7 @@
 {
-  "name": "sample-container",
+  "name": "lab1-app",
   "version": "1.0.0",
-  "description": "Dockerfile with sample Node.js application for Ignite Lab CSUC",
+  "description": "Sample Node.js application for Ignite Lab CSUC",
   "main": "app.js",
   "scripts": {
     "test": "mocha"
