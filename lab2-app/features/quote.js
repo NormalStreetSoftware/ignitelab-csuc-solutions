@@ -1,5 +1,5 @@
-### [quote]
-## Quote Feature
+/// [quote]
+// Quote Feature
 const randomQuotes = require('random-quotes');
 
 module.exports = function(controller) {
