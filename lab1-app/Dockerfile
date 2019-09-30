@@ -4,7 +4,7 @@ FROM node:12.10 as test
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json .eslintrc.js ./
 
 RUN npm install
 
