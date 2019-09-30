@@ -28,14 +28,9 @@ spec:
             httpGet:
               path: /
               port: http
-          env:
-          - name: botToken
-            valueFrom:
-              secretKeyRef:
-                name: ignitelab-csuc-bottoken
-                key: botToken
-          - name: clientSigningSecret
-            valueFrom:
-              secretKeyRef:
-                name: ignitelab-csuc-bottoken
-                key: clientSigningSecret
+          volumeMounts:
+            - name: env
+              mountPath: "/app/.env"
+      volumes:
+        - name: env
+          secret: slackbot-env
