@@ -8,7 +8,7 @@ COPY features ./features
 
 RUN npm install
 
-RUN npm test
+RUN node ./node_modules/.bin/mocha
 
 FROM node:12.10-alpine AS builder
 
