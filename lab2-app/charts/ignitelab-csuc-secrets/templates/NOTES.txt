@@ -1,0 +1,1 @@
+Your Slack bot tokens have been saved as a Kubernetes secret

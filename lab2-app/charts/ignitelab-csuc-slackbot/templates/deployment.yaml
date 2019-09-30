@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ignitelab-csuc-slackbot
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ignitelab-csuc-slackbot
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ignitelab-csuc-slackbot
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: slackbot
+          image: "{{ .Values.image.repository }}"
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          env:
+          - name: botToken
+            valueFrom:
+              secretKeyRef:
+                name: ignitelab-csuc-bottoken
+                key: botToken
+          - name: clientSigningSecret
+            valueFrom:
+              secretKeyRef:
+                name: ignitelab-csuc-bottoken
+                key: clientSigningSecret
