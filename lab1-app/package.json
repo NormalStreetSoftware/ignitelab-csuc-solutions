@@ -9,7 +9,6 @@
   "author": "Chris Schreiber <chriss@liatrio.com>",
   "license": "ISC",
   "devDependencies": {
-    "request": "^2.88.0",
     "chai": "^4.2.0",
     "mocha": "^6.2.0"
   },
