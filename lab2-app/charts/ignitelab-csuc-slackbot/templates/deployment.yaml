@@ -33,4 +33,5 @@ spec:
               mountPath: "/app/.env"
       volumes:
         - name: env
-          secret: slackbot-env
+          secret: 
+            secretName: slackbot-env
