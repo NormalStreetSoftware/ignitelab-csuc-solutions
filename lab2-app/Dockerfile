@@ -24,6 +24,8 @@ FROM node:12.10-alpine
 
 WORKDIR /app
 
+RUN ln -s /app/env/.env /app/.env
+
 COPY --from=builder /app/node_modules ./node_modules
 
 COPY features ./features
